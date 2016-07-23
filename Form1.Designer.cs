@@ -28,21 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.ggTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.playAgainButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(559, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(254, 387);
+            this.startButton.Location = new System.Drawing.Point(240, 393);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -52,41 +49,90 @@
             // 
             // ggTable
             // 
+            this.ggTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.ggTable.ColumnCount = 10;
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.ggTable.Location = new System.Drawing.Point(216, 57);
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ggTable.Location = new System.Drawing.Point(12, 12);
             this.ggTable.Name = "ggTable";
             this.ggTable.RowCount = 10;
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ggTable.Size = new System.Drawing.Size(283, 205);
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ggTable.Size = new System.Drawing.Size(527, 341);
             this.ggTable.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(598, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(598, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
+            // playAgainButton
+            // 
+            this.playAgainButton.Location = new System.Drawing.Point(575, 393);
+            this.playAgainButton.Name = "playAgainButton";
+            this.playAgainButton.Size = new System.Drawing.Size(121, 23);
+            this.playAgainButton.TabIndex = 5;
+            this.playAgainButton.Text = "Play Again (y/n)";
+            this.playAgainButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(572, 163);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Message";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(575, 179);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(154, 104);
+            this.textBox1.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 458);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.playAgainButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ggTable);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -97,9 +143,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.TableLayoutPanel ggTable;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button playAgainButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
