@@ -33,7 +33,7 @@ namespace Assignment6_7GuessingGame
             // enable grid
 
             // hide startgame button
-            startButton.Visible = false;
+            BtnStart.Visible = false;
         }
 
         // method to display 'play again' message
@@ -70,7 +70,7 @@ namespace Assignment6_7GuessingGame
             // disable grid
 
             // display startgame button
-            startButton.Visible = true;
+            BtnStart.Visible = true;
 
             PlayAgain();
         }
