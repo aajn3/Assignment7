@@ -55,12 +55,13 @@ namespace Assignment6_7GuessingGame
             //decrementing the lives and score
             score -= 10;
             lives -= 1;
+            //storing them back in the dictionary
             GGString["score"] = score;
             GGString["lives"] = lives;
            
         }
 
-        // Method compares value to random number and returns int based on result
+        // Method compares value to random number and returns string array based on results
         public string[] CheckGuess(int guessValue)
         {
             //function will return a string array of the message(s) to display, the score, lives and the new box color
@@ -86,7 +87,7 @@ namespace Assignment6_7GuessingGame
             }
             else
             {
-                message = new string[] { GGString["winMessage"].ToString(), GGString["playAgainMessage"].ToString(), score.ToString(), lives.ToString(), "green" };
+                message = new string[] { GGString["winMessage"].ToString(), GGString["playAgainMessage"].ToString(), score.ToString(), lives.ToString(), "lime" };
                 return message;
             }
         }

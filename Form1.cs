@@ -29,7 +29,9 @@ namespace Assignment6_7GuessingGame
         void Restart()
         {
             game.StartGame();
-            //ggTable.
+            lblLives.Text = "Score: 100";
+            lblScore.Text = "Lives: 10";
+
             // reset board colors
             ggTable.BackColor = SystemColors.Control;
 
@@ -48,6 +50,7 @@ namespace Assignment6_7GuessingGame
             {
                 // user clicked yes: StartGame()
                 game.StartGame();
+                Restart();
             }
             else
             {
@@ -65,6 +68,17 @@ namespace Assignment6_7GuessingGame
             //if statement to check if there are still lives
             if (Convert.ToInt32(changes[3]) <= 0)
             {
+                EndGame();
+            }
+            else if (changes[0] == "CONGRATULATIONS! YOU WIN!")
+            {
+                txtBoxMessage.Text = changes[0];
+                lblScore.Text = "Score: " + changes[2];
+                lblLives.Text = "Lives: " + changes[3];
+
+                //this will change the label color
+                Color col = Color.FromName(changes[4]);
+                lbl.BackColor = col;
                 EndGame();
             }
             else
@@ -89,8 +103,25 @@ namespace Assignment6_7GuessingGame
             // display startgame button
             BtnStart.Visible = true;
 
+            //PlayAgain();
+        }
+        //click event for the table
+        private void ggTable_Click(object sender, EventArgs e)
+        {
+            //getting the label that was clicked
+            Label l = ((Label)sender);
+            previousBgColour = l.BackColor;
+            //calling the ClickGuess function and passing through the value of the label and the label itself
+            ClickGuess(Convert.ToInt32(l.Text), l);
+
+            //l.BackColor = Color.FromArgb(0, 0, 255);
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
             PlayAgain();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -109,10 +140,10 @@ namespace Assignment6_7GuessingGame
                     | System.Windows.Forms.AnchorStyles.Left)
                     | System.Windows.Forms.AnchorStyles.Right)));
 
-                    if (i == 4 && j == 3)
-                    {
-                        tmpLbl.BackColor = Color.FromArgb(0, 255, 0);
-                    }
+                    //if (i == 4 && j == 3)
+                    //{
+                    //    tmpLbl.BackColor = Color.FromArgb(0, 255, 0);
+                    //}
 
 
                     tmpLbl.Click += ggTable_Click;
@@ -128,25 +159,7 @@ namespace Assignment6_7GuessingGame
 
 
 
-        private void ggTable_Click(object sender, EventArgs e)
-        {
-            Label l = ((Label)sender);
-            previousBgColour = l.BackColor;
-            //calling the ClickGuess function and passing through the value of the label and the label itself
-            ClickGuess(Convert.ToInt32(l.Text), l);
 
-            //l.BackColor = Color.FromArgb(0, 0, 255);
-        }
-
-        private void btnPlayAgain_Click(object sender, EventArgs e)
-        {
-            PlayAgain();
-        }
-
-        private void txtBoxMessage_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //private void ggTable_Leave(object sender, EventArgs e)
         //{
