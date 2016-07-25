@@ -29,11 +29,14 @@ namespace Assignment6_7GuessingGame
         void Restart()
         {
             game.StartGame();
+            //reseting labels
             lblLives.Text = "Score: 100";
             lblScore.Text = "Lives: 10";
+            txtBoxMessage.Text = " ";
 
             // reset board colors
-            ggTable.BackColor = SystemColors.Control;
+            Form1_Load(this, null);
+
 
             // enable grid
             ggTable.Enabled = true;
@@ -48,14 +51,11 @@ namespace Assignment6_7GuessingGame
             // show messagebox with playAgainMessage
             if (MessageBox.Show("Would you like to play again? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // user clicked yes: StartGame()
-                game.StartGame();
                 Restart();
             }
             else
             {
-                // user clicked no: close message box
-
+                this.Close();
             }
         }
 
@@ -125,6 +125,8 @@ namespace Assignment6_7GuessingGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+            ggTable.Controls.Clear();
             int LblIndex = 1;
             Label tmpLbl;
             for (int i = 0; i <= 9; i++)
