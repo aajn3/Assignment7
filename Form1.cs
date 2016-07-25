@@ -33,6 +33,7 @@ namespace Assignment6_7GuessingGame
             lblLives.Text = "Score: 100";
             lblScore.Text = "Lives: 10";
             txtBoxMessage.Text = " ";
+            txtBoxMessage.Enabled = false;
 
             // reset board colors
             Form1_Load(this, null);
