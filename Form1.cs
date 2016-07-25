@@ -44,29 +44,21 @@ namespace Assignment6_7GuessingGame
             // no: close messagebox
         }
 
-        // check guess
-        void ClickGuess(int cellValue) {
-            //// assign reference to clicked cell
-            //int guessResult = game.CheckGuess(clickedCell value);
+        // Method to apply all the changes and text values to the form 
+        void ClickGuess(int cellValue, Label lbl) {
 
-            //if (guessresult.equals(-1))
-            //{
-            //    miss();
-            //    // turn cell yellow, display infmessage
-            //    // update labels on gui
+            string[] changes = new string[5];
+            changes = game.CheckGuess(cellValue);
 
-            //}
-            //else if (guessresult.equals(1))
-            //{
-            //    miss();
-            //    // turn cell red, display supmessage
-            //    // update labels on gui
-            //}
-            //else
-            //{
-            //    // turn cell green, display winmessage
-            //    endgame();
-            //}
+            // changing the text values to match the picked values
+            txtBoxMessage.Text = changes[0];
+            lblScore.Text = "Score: " + changes[2];
+            lblLives.Text = "Lives: " + changes[3];
+
+            //this will change the label color
+            Color col = Color.FromName(changes[4]); 
+            lbl.BackColor = col;
+            
 
         }
 
@@ -131,13 +123,18 @@ namespace Assignment6_7GuessingGame
         {
             Label l = ((Label)sender);
             previousBgColour = l.BackColor;
+            //calling the ClickGuess function and passing through the value of the label and the label itself
+            ClickGuess(Convert.ToInt32(l.Text), l);
 
-            ClickGuess(Convert.ToInt32(l.Text));
-
-            l.BackColor = Color.FromArgb(0, 0, 255);
+            //l.BackColor = Color.FromArgb(0, 0, 255);
         }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxMessage_TextChanged(object sender, EventArgs e)
         {
 
         }

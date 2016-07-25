@@ -121,6 +121,7 @@
             this.txtBoxMessage.Name = "txtBoxMessage";
             this.txtBoxMessage.Size = new System.Drawing.Size(154, 104);
             this.txtBoxMessage.TabIndex = 7;
+            this.txtBoxMessage.TextChanged += new System.EventHandler(this.txtBoxMessage_TextChanged);
             // 
             // Form1
             // 

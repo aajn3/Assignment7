@@ -50,45 +50,45 @@ namespace Assignment6_7GuessingGame
             randomNumber = r.Next(1, 101);            
         }       
         
-        public string Miss(int value)
+        public void Miss()
         {
             //decrementing the lives and score
             score -= 10;
             lives -= 1;
             GGString["score"] = score;
             GGString["lives"] = lives;
-            string message ="message"; 
-
-            int guessResult = value; 
-
-            if (guessResult == -1) {		        
-                
-                // turn cell yellow, display infMessage
-                message = GGString["infMessage"].ToString();
-
-            } else if (guessResult==1) {		        
-                //Miss();
-                // turn cell red, display supMessage
-               message= GGString["supMessage"].ToString();
-            }
-            return message; 
+           
         }
 
         // Method compares value to random number and returns int based on result
-        public int CheckGuess(int guessValue)
+        public string[] CheckGuess(int guessValue)
         {
+            //function will return a string array of the message(s) to display, the score, lives and the new box color
+            string[] message;
             //if the guessed value is less than the random num 
-            if (randomNumber > guessValue) {
-                //this.Miss();
-                return -1;
+            if (randomNumber > guessValue && lives>=1) {
+                this.Miss();
+                message = new string[] { GGString["infMessage"].ToString(), "",score.ToString(), lives.ToString(), "yellow" };
+                return message;
+
             }
             //if the guessed value is greater than the random num
-            else if (randomNumber < guessValue)
+            else if (randomNumber < guessValue && lives >= 1)
             {
-                //this.Miss();
-                return 1;
-            } else
-                return 0;
+                this.Miss();
+                message = new string[] { GGString["supMessage"].ToString(), "", score.ToString(), lives.ToString(), "red"};
+                return message;
+            }
+            else if (randomNumber != guessValue && lives <=0)
+            {
+                message = new string[] { GGString["failMessage"].ToString(), GGString["playAgainMessage"].ToString(),score.ToString(), lives.ToString(),"red"};
+                return message;
+            }
+            else
+            {
+                message = new string[] { GGString["winMessage"].ToString(), GGString["playAgainMessage"].ToString(), score.ToString(), lives.ToString(), "green" };
+                return message;
+            }
         }
     }
 }
