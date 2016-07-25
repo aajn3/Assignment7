@@ -29,8 +29,12 @@ namespace Assignment6_7GuessingGame
         void Restart()
         {
             game.StartGame();
+            //ggTable.
             // reset board colors
+            ggTable.BackColor = SystemColors.Control;
+
             // enable grid
+            ggTable.Enabled = true;
 
             // hide startgame button
             BtnStart.Visible = false;
@@ -40,8 +44,16 @@ namespace Assignment6_7GuessingGame
         void PlayAgain()
         {
             // show messagebox with playAgainMessage
-            // yes: StartGame()
-            // no: close messagebox
+            if (MessageBox.Show("Would you like to play again? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // user clicked yes: StartGame()
+                game.StartGame();
+            }
+            else
+            {
+                // user clicked no: close message box
+
+            }
         }
 
         // Method to apply all the changes and text values to the form 
@@ -50,37 +62,34 @@ namespace Assignment6_7GuessingGame
             string[] changes = new string[5];
             changes = game.CheckGuess(cellValue);
 
-            // changing the text values to match the picked values
-            txtBoxMessage.Text = changes[0];
-            lblScore.Text = "Score: " + changes[2];
-            lblLives.Text = "Lives: " + changes[3];
+            //if statement to check if there are still lives
+            if (Convert.ToInt32(changes[3]) <= 0)
+            {
+                EndGame();
+            }
+            else
+            {
+                // changing the text values to match the picked values
+                txtBoxMessage.Text = changes[0];
+                lblScore.Text = "Score: " + changes[2];
+                lblLives.Text = "Lives: " + changes[3];
 
-            //this will change the label color
-            Color col = Color.FromName(changes[4]); 
-            lbl.BackColor = col;
-            
+                //this will change the label color
+                Color col = Color.FromName(changes[4]);
+                lbl.BackColor = col;
+            }
+           
 
         }
 
         void EndGame()
         {
             // disable grid
-
+            ggTable.Enabled = false;
             // display startgame button
             BtnStart.Visible = true;
 
             PlayAgain();
-        }
-
-        void Miss()
-        {
-            // check score & lives values
-            //if (score <= 0 || lives <= 0)
-            //{
-            // disable grid
-            // display failMessage
-            //    EndGame();
-            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,7 +140,7 @@ namespace Assignment6_7GuessingGame
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
-
+            PlayAgain();
         }
 
         private void txtBoxMessage_TextChanged(object sender, EventArgs e)
