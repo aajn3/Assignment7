@@ -45,22 +45,27 @@ namespace Assignment6_7GuessingGame
         }
 
         // check guess
-        void ClickGuess() {
+        void ClickGuess(int cellValue) {
             //// assign reference to clicked cell
             //int guessResult = game.CheckGuess(clickedCell value);
-	
-            //if (guessResult.Equals(-1)) {		        
-            //    Miss();
-            //    // turn cell yellow, display infMessage
-            //    // update labels on GUI
 
-            //} else if (guessResult.Equals(1)) {		        
-            //    Miss();
-            //    // turn cell red, display supMessage
-            //    // update labels on GUI
-            //} else {
-            //    // turn cell green, display winMessage
-            //    EndGame();                
+            //if (guessresult.equals(-1))
+            //{
+            //    miss();
+            //    // turn cell yellow, display infmessage
+            //    // update labels on gui
+
+            //}
+            //else if (guessresult.equals(1))
+            //{
+            //    miss();
+            //    // turn cell red, display supmessage
+            //    // update labels on gui
+            //}
+            //else
+            //{
+            //    // turn cell green, display winmessage
+            //    endgame();
             //}
 
         }
@@ -127,7 +132,14 @@ namespace Assignment6_7GuessingGame
             Label l = ((Label)sender);
             previousBgColour = l.BackColor;
 
+            ClickGuess(Convert.ToInt32(l.Text));
+
             l.BackColor = Color.FromArgb(0, 0, 255);
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void ggTable_Leave(object sender, EventArgs e)

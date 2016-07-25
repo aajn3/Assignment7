@@ -10,8 +10,9 @@ namespace Assignment6_7GuessingGame
     {
         // PRIVATE INSTANCE VARIABLES
         private Dictionary<string, object> GGString; // TODO: is object the most appropriate here?
-        private int randomNumber;
+        private int randomNumber, score, lives;
         private Random r;
+
 
         // CONSTRUCTOR
         public GuessingGame()
@@ -20,6 +21,7 @@ namespace Assignment6_7GuessingGame
             r = new Random();
             randomNumber = 0;
             GGString = new Dictionary<string,object>();
+            
 
             // insert Dictionary values
             GGString.Add("startGame", "Start the Game");
@@ -30,30 +32,60 @@ namespace Assignment6_7GuessingGame
             GGString.Add("playAgainMessage", "Would you like to play again?");
             GGString.Add("score", 100);
             GGString.Add("lives", 10);
+
+            //grabbing the values of lives and score from the dictionary
+            score = Convert.ToInt32(GGString["score"]);
+            lives = Convert.ToInt32(GGString["lives"]);
+
         }
 
         // PUBLIC METHODS
         // resets the game to initial state
         public void StartGame()
         {
-            // reset score and lives
+            //reseting the values of score and lives to original values
+            GGString["score"] = 100;
+            GGString["lives"] = 10;
             // choose a new random number
             randomNumber = r.Next(1, 101);            
         }       
         
-        public void Miss()
+        public string Miss(int value)
         {
-            // decrement score and lives
+            //decrementing the lives and score
+            score -= 10;
+            lives -= 1;
+            GGString["score"] = score;
+            GGString["lives"] = lives;
+            string message ="message"; 
+
+            int guessResult = value; 
+
+            if (guessResult == -1) {		        
+                
+                // turn cell yellow, display infMessage
+                message = GGString["infMessage"].ToString();
+
+            } else if (guessResult==1) {		        
+                //Miss();
+                // turn cell red, display supMessage
+               message= GGString["supMessage"].ToString();
+            }
+            return message; 
         }
 
         // Method compares value to random number and returns int based on result
-        public int CheckGuess(int value)
+        public int CheckGuess(int guessValue)
         {
-            if (randomNumber < value) {
-                this.Miss();
+            //if the guessed value is less than the random num 
+            if (randomNumber > guessValue) {
+                //this.Miss();
                 return -1;
-            } else if (randomNumber > value) {
-                this.Miss();
+            }
+            //if the guessed value is greater than the random num
+            else if (randomNumber < guessValue)
+            {
+                //this.Miss();
                 return 1;
             } else
                 return 0;
