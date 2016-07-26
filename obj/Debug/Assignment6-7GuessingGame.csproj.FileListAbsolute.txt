@@ -17,3 +17,12 @@ C:\Users\aaron\Documents\Visual Studio 2013\Projects\assignment7\Assignment7\obj
 C:\Users\aaron\Documents\Visual Studio 2013\Projects\assignment7\Assignment7\obj\Debug\Assignment6-7GuessingGame.csproj.GenerateResource.Cache
 C:\Users\aaron\Documents\Visual Studio 2013\Projects\assignment7\Assignment7\obj\Debug\Assignment6-7GuessingGame.exe
 C:\Users\aaron\Documents\Visual Studio 2013\Projects\assignment7\Assignment7\obj\Debug\Assignment6-7GuessingGame.pdb
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\bin\Debug\Assignment6-7GuessingGame.exe.config
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6-7GuessingGame.exe
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6-7GuessingGame.pdb
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6-7GuessingGame.csprojResolveAssemblyReference.cache
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6_7GuessingGame.Form1.resources
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6_7GuessingGame.Properties.Resources.resources
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\obj\Debug\Assignment6-7GuessingGame.csproj.GenerateResource.Cache
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\bin\Debug\Assignment6-7GuessingGame.exe
+C:\Users\arlin\Documents\Centennial College\Semester 4\COMP 212\Assignments\Assignment7\bin\Debug\Assignment6-7GuessingGame.pdb

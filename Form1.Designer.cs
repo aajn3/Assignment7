@@ -103,6 +103,7 @@
             this.btnPlayAgain.TabIndex = 5;
             this.btnPlayAgain.Text = "Play Again (y/n)";
             this.btnPlayAgain.UseVisualStyleBackColor = true;
+            this.btnPlayAgain.Click += new System.EventHandler(this.btnPlayAgain_Click);
             // 
             // label3
             // 

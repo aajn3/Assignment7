@@ -10,8 +10,9 @@ namespace Assignment6_7GuessingGame
     {
         // PRIVATE INSTANCE VARIABLES
         private Dictionary<string, object> GGString; // TODO: is object the most appropriate here?
-        private int randomNumber;
+        private int randomNumber, score, lives;
         private Random r;
+
 
         // CONSTRUCTOR
         public GuessingGame()
@@ -20,6 +21,7 @@ namespace Assignment6_7GuessingGame
             r = new Random();
             randomNumber = 0;
             GGString = new Dictionary<string,object>();
+            
 
             // insert Dictionary values
             GGString.Add("startGame", "Start the Game");
@@ -30,33 +32,64 @@ namespace Assignment6_7GuessingGame
             GGString.Add("playAgainMessage", "Would you like to play again?");
             GGString.Add("score", 100);
             GGString.Add("lives", 10);
+
+            //grabbing the values of lives and score from the dictionary
+            score = Convert.ToInt32(GGString["score"]);
+            lives = Convert.ToInt32(GGString["lives"]);
+
         }
 
         // PUBLIC METHODS
         // resets the game to initial state
         public void StartGame()
         {
-            // reset score and lives
+            //reseting the values of score and lives to original values
+            GGString["score"] = 100;
+            GGString["lives"] = 10;
             // choose a new random number
             randomNumber = r.Next(1, 101);            
         }       
         
         public void Miss()
         {
-            // decrement score and lives
+            //decrementing the lives and score
+            score -= 10;
+            lives -= 1;
+            //storing them back in the dictionary
+            GGString["score"] = score;
+            GGString["lives"] = lives;
+           
         }
 
-        // Method compares value to random number and returns int based on result
-        public int CheckGuess(int value)
+        // Method compares value to random number and returns string array based on results
+        public string[] CheckGuess(int guessValue)
         {
-            if (randomNumber < value) {
+            //function will return a string array of the message(s) to display, the score, lives and the new box color
+            string[] message;
+            //if the guessed value is less than the random num 
+            if (randomNumber > guessValue && lives>=1) {
                 this.Miss();
-                return -1;
-            } else if (randomNumber > value) {
+                message = new string[] { GGString["infMessage"].ToString(), "",score.ToString(), lives.ToString(), "yellow" };
+                return message;
+
+            }
+            //if the guessed value is greater than the random num
+            else if (randomNumber < guessValue && lives >= 1)
+            {
                 this.Miss();
-                return 1;
-            } else
-                return 0;
+                message = new string[] { GGString["supMessage"].ToString(), "", score.ToString(), lives.ToString(), "red"};
+                return message;
+            }
+            else if (randomNumber != guessValue && lives <=0)
+            {
+                message = new string[] { GGString["failMessage"].ToString(), GGString["playAgainMessage"].ToString(),score.ToString(), lives.ToString(),"red"};
+                return message;
+            }
+            else
+            {
+                message = new string[] { GGString["winMessage"].ToString(), GGString["playAgainMessage"].ToString(), score.ToString(), lives.ToString(), "lime" };
+                return message;
+            }
         }
     }
 }
