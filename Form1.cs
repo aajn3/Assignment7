@@ -16,6 +16,8 @@ namespace Assignment6_7GuessingGame
         Color previousBgColour;
         public Form1()
         {
+            // This is put here because is cant be in the auto generated part
+            this.ggTable = new DoubleBufferedTableLayoutPanel();
             InitializeComponent();
             Restart();
         }

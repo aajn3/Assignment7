@@ -47,7 +47,9 @@ namespace Assignment6_7GuessingGame
             GGString["score"] = 100;
             GGString["lives"] = 10;
             // choose a new random number
-            randomNumber = r.Next(1, 101);            
+            randomNumber = r.Next(1, 101);
+
+            Console.WriteLine(randomNumber);
         }       
         
         public void Miss()
