@@ -35,8 +35,10 @@ namespace Assignment6_7GuessingGame
             txtBoxMessage.Text = " ";
             txtBoxMessage.ReadOnly = true;
 
+            ggTable.SuspendLayout();
             // reset board colors
             Form1_Load(this, null);
+            ggTable.ResumeLayout();
 
 
             // enable grid
