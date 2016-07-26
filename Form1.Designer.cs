@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.BtnStart = new System.Windows.Forms.Button();
-            this.ggTable = new System.Windows.Forms.TableLayoutPanel();
+            this.ggTable = new DoubleBufferedTableLayoutPanel();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblLives = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
