@@ -30,10 +30,10 @@ namespace Assignment6_7GuessingGame
         {
             game.StartGame();
             //reseting labels
-            lblLives.Text = "Score: 100";
-            lblScore.Text = "Lives: 10";
+            lblLives.Text = "Lives: 10";
+            lblScore.Text = "Score: 100";
             txtBoxMessage.Text = " ";
-            txtBoxMessage.Enabled = false;
+            txtBoxMessage.ReadOnly = true;
 
             // reset board colors
             Form1_Load(this, null);

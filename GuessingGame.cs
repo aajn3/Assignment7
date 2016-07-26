@@ -46,8 +46,12 @@ namespace Assignment6_7GuessingGame
             //reseting the values of score and lives to original values
             GGString["score"] = 100;
             GGString["lives"] = 10;
+            //
+            score = Convert.ToInt32(GGString["score"]);
+            lives = Convert.ToInt32(GGString["lives"]);
             // choose a new random number
-            randomNumber = r.Next(1, 101);            
+            randomNumber = r.Next(1, 101);
+         
         }       
         
         public void Miss()
