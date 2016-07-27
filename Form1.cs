@@ -69,13 +69,26 @@ namespace Assignment6_7GuessingGame
             changes = game.CheckGuess(cellValue);
 
             //if statement to check if there are still lives
-            if (Convert.ToInt32(changes[3]) <= 0)
+           
+            if (Convert.ToInt32(changes[3]) <= 0) //losing
             {
+                //adding text values to the controls
+                string text = changes[0] + "\n" + changes[1];
+                txtBoxMessage.Text = text.Replace("\n", System.Environment.NewLine); 
+                
+                lblScore.Text = "Score: " + changes[2];
+                lblLives.Text = "Lives: " + changes[3];
+                //this will change the label color
+                Color col = Color.FromName(changes[4]);
+                lbl.BackColor = col;
                 EndGame();
             }
-            else if (changes[0] == "CONGRATULATIONS! YOU WIN!")
+            else if (changes[0] == "CONGRATULATIONS! YOU WIN!")//winning
             {
-                txtBoxMessage.Text = changes[0];
+                //adding text values to the controls
+                string text = changes[0] + "\nScore: " + changes[2] + "\nLives: " + changes[3] + " \n" + changes[1];
+                txtBoxMessage.Text = text.Replace("\n", System.Environment.NewLine);
+                
                 lblScore.Text = "Score: " + changes[2];
                 lblLives.Text = "Lives: " + changes[3];
 
@@ -84,7 +97,7 @@ namespace Assignment6_7GuessingGame
                 lbl.BackColor = col;
                 EndGame();
             }
-            else
+            else //default (less than random and greater than random)
             {
                 // changing the text values to match the picked values
                 txtBoxMessage.Text = changes[0];
@@ -115,9 +128,16 @@ namespace Assignment6_7GuessingGame
             Label l = ((Label)sender);
             previousBgColour = l.BackColor;
             //calling the ClickGuess function and passing through the value of the label and the label itself
-            ClickGuess(Convert.ToInt32(l.Text), l);
+            //if is checking to see if the number was chosen by checking the back color
+            if (l.BackColor.Equals(System.Drawing.SystemColors.Control))
+            {
+                ClickGuess(Convert.ToInt32(l.Text), l);
+               
+            }
+            else
+                MessageBox.Show("Please choose a number that has not already been chosen");
 
-            //l.BackColor = Color.FromArgb(0, 0, 255);
+           
         }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
